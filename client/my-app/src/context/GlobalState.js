@@ -5,14 +5,14 @@ const initialState = [
     topic: "Design",
     text: "Combing the whole design process , Combing the whole design process Combing the whole design process",
     priority: "important",
-    completed: false,
+    completed: true,
     section: "work",
   },
   {
     topic: "Health",
     text: "Go to the gym",
     priority: "important",
-    completed: true,
+    completed: false,
     section: "work",
   },
   {
