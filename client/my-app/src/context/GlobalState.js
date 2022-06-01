@@ -22,6 +22,27 @@ const initialState = [
     completed: false,
     section: "work",
   },
+  {
+    topic: "Design",
+    text: "Combing the whole design process , Combing the whole design process Combing the whole design process",
+    priority: "important",
+    completed: true,
+    section: "work",
+  },
+  {
+    topic: "Design",
+    text: "Combing the whole design process , Combing the whole design process Combing the whole design process",
+    priority: "important",
+    completed: true,
+    section: "work",
+  },
+  {
+    topic: "Design",
+    text: "Combing the whole design process , Combing the whole design process Combing the whole design process",
+    priority: "important",
+    completed: true,
+    section: "work",
+  },
 ];
 
 export const Globalcontext = createContext();

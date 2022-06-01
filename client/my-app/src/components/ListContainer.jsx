@@ -9,7 +9,7 @@ const ListContainer = ({ section }) => {
   const filteredArr = arr.filter((item) => item.section === section);
 
   return (
-    <div className="">
+    <div>
       {filteredArr.map((item, ind) => (
         <div
           key={ind}
