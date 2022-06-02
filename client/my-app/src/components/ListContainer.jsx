@@ -17,15 +17,20 @@ const ListContainer = ({ section }) => {
             item.completed ? " bg-green-50" : " "
           }`}
         >
-          {item.completed ? (
+          {/* {item.completed ? (
             <div className=" w-20 border-r-2 text-xl flex items-center justify-center text-emerald-400 bg-green-50">
               <BsCheckLg />
             </div>
           ) : (
             <div className=" w-20 border-r-2 text-3xl flex items-center justify-center text-yellow-400 bg-gray-50">
-              <BiRadioCircle />
+             
             </div>
-          )}
+          )} */}
+
+          <div className={ `w-20 border-r-2 text-xl flex items-center justify-center 
+          ${item.completed ? 'text-emerald-400 bg-green-50' : 'text-yellow-400 bg-gray-50'}` }>
+             {item.completed ? <BsCheckLg /> :  <BiRadioCircle />} 
+            </div>
 
           <div className="p-8 flex items-center ">
             <div className=" w-56 max-h-28 font-roboto line-clamp-4">
@@ -35,7 +40,7 @@ const ListContainer = ({ section }) => {
                   item.completed ? " line-through text-stone-400" : " "
                 }`}
               >
-                {item.text}
+                {item.content}
               </h3>
             </div>
           </div>
