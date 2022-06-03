@@ -1,73 +1,25 @@
-import { createContext, useEffect , useState } from "react";
-
-
-
+import axios from "axios";
+import { createContext, useEffect, useState } from "react";
 
 export const Globalcontext = createContext();
 
 export const GlobalProvider = ({ children }) => {
-
-  const [data, setData ] = useState([])
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-      const getData = async () => {
-          const res = await fetch('http://localhost:3001/getTasks')
-          const json = await res.json()
-          return await setData(json)
+    const getData = async () => {
+      try {
+        const res = await axios.get("http://localhost:3001/getTasks");
+        return setData(res.data);
+      } catch (error) {
+        return setData([]);
       }
+    };
 
-      getData()
-  }, [])
+    getData();
+  }, []);
 
   return (
-    <Globalcontext.Provider value={data}>
-      {children}
-    </Globalcontext.Provider>
+    <Globalcontext.Provider value={data}>{children}</Globalcontext.Provider>
   );
 };
-
-
-// const initialState = [
-  //   {
-  //     topic: "Design",
-  //     text: "Combing the whole design process , Combing the whole design process Combing the whole design process",
-  //     priority: "important",
-  //     completed: true,
-  //     section: "work",
-  //   },
-  //   {
-  //     topic: "Health",
-  //     text: "Go to the gym",
-  //     priority: "important",
-  //     completed: false,
-  //     section: "work",
-  //   },
-  //   {
-  //     topic: "Company",
-  //     text: "Project approve report",
-  //     priority: "important",
-  //     completed: false,
-  //     section: "work",
-  //   },
-  //   {
-  //     topic: "Design",
-  //     text: "Combing the whole design process , Combing the whole design process Combing the whole design process",
-  //     priority: "important",
-  //     completed: true,
-  //     section: "work",
-  //   },
-  //   {
-  //     topic: "Design",
-  //     text: "Combing the whole design process , Combing the whole design process Combing the whole design process",
-  //     priority: "important",
-  //     completed: true,
-  //     section: "work",
-  //   },
-  //   {
-  //     topic: "Design",
-  //     text: "Combing the whole design process , Combing the whole design process Combing the whole design process",
-  //     priority: "important",
-  //     completed: true,
-  //     section: "work",
-  //   },
-  // ];

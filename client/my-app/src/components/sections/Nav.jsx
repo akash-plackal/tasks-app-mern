@@ -23,7 +23,7 @@ const Nav = ({ section }) => {
           <BsPlusLg />
         </button>
       </div>
-      <AddItemModal isOpen={isOpen} setIsOpen={setIsOpen} />
+      <AddItemModal isOpen={isOpen} section={section} setIsOpen={setIsOpen} />
     </>
   );
 };

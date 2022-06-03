@@ -1,6 +1,7 @@
 import React from "react";
+import CreateTasksForm from "./CreateTasksForm";
 
-const AddItemModal = ({ isOpen, setIsOpen }) => {
+const AddItemModal = ({ isOpen, setIsOpen, section }) => {
   return (
     <div>
       <div
@@ -21,47 +22,7 @@ const AddItemModal = ({ isOpen, setIsOpen }) => {
             aria-modal="true"
             aria-labelledby="modal-headline"
           >
-            <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-              <input
-                type="text"
-                className="w-full border-2 rounded p-2 mt-2 mb-3"
-                placeholder="Topic"
-              />
-              <select
-                className="w-full border-2 rounded p-2 mt-2 mb-3 bg-white text-gray-400 "
-                placeholder="select"
-              >
-                <option defaultValue>choose priority</option>
-
-                <option>high</option>
-                <option>medium</option>
-                <option>low</option>
-              </select>
-
-              <textarea
-                rows="8"
-                className="w-full border-2 rounded  p-2 mt-2 mb-3"
-                placeholder="note ..."
-              ></textarea>
-            </div>
-
-            {/* Buttons */}
-
-            <div className="bg-gray-200 px-4 py-3 text-right">
-              <button
-                type="button"
-                onClick={() => setIsOpen(false)}
-                className="py-2 px-5 border-2 border-rose-500 text-rose-500 rounded  mr-2"
-              >
-                <i className="fas fa-times"></i> Cancel
-              </button>
-              <button
-                type="button"
-                className="py-2 px-5 border-2 border-rose-500 bg-rose-500  text-white rounded hover:bg-rose-600 mr-2"
-              >
-                <i className="fas fa-plus"></i> Create
-              </button>
-            </div>
+            <CreateTasksForm section={section} setIsOpen={setIsOpen} />
           </div>
         </div>
       </div>

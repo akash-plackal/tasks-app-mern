@@ -27,10 +27,16 @@ const ListContainer = ({ section }) => {
             </div>
           )} */}
 
-          <div className={ `w-20 border-r-2 text-xl flex items-center justify-center 
-          ${item.completed ? 'text-emerald-400 bg-green-50' : 'text-yellow-400 bg-gray-50'}` }>
-             {item.completed ? <BsCheckLg /> :  <BiRadioCircle />} 
-            </div>
+          <div
+            className={`w-20 border-r-2 text-xl flex items-center justify-center 
+          ${
+            item.completed
+              ? "text-emerald-400 bg-green-50"
+              : "text-yellow-400 bg-gray-50"
+          }`}
+          >
+            {item.completed ? <BsCheckLg /> : <BiRadioCircle />}
+          </div>
 
           <div className="p-8 flex items-center ">
             <div className=" w-56 max-h-28 font-roboto line-clamp-4">
