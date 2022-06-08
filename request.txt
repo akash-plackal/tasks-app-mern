@@ -1,0 +1,4 @@
+	
+
+1 . create a function to send an id 
+2. filter that array and set the values
